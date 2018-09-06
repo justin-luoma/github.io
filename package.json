@@ -21,8 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build"
+    "build": "react-scripts build"
   },
   "gh-pages-deploy": {
     "branch": "master"
