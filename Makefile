@@ -1,6 +1,6 @@
 default :
 	@echo "=============starting local server============="
-	yarn start &
+	yarn start
 
 backup : FORCE
 	@echo "=============backing up .git directory============="

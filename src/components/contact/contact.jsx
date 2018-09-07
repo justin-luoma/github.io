@@ -12,6 +12,7 @@ class ContactComponent extends Component {
       name: '',
       message: '',
       email: '',
+      none: null,
       errorMessage: null,
       successMessage: null,
       messageAlreadySent: false,
@@ -44,6 +45,9 @@ class ContactComponent extends Component {
   onSubmit() {
     this.setState({successMessage: null});
     this.setState({errorMessage: null});
+    if (this.state.none !== null) {
+      return;
+    }
     this.displayLoadingBar();
     try {
       if (this.state.messageAlreadySent)
@@ -78,8 +82,8 @@ class ContactComponent extends Component {
           this.setState({errorMessage: null});
         }
     });
-    xhttp.open("POST", "https://go-mail-justin-luoma.herokuapp.com/mail", true);
-    xhttp.send(JSON.stringify({"name":this.state.name, "email":this.state.email, "message":this.state.message}));
+    xhttp.open("POST", "https://go-mail.justinluoma.com/mail", true);
+    xhttp.send(JSON.stringify({"name":this.state.name, "email":this.state.email, "message":this.state.message, "honeypot":this.state.none,}));
   }
 
   onUpdateField(field, event) {
@@ -94,29 +98,38 @@ class ContactComponent extends Component {
 
       <div className="contact">
         <p className="headline">Contact</p>
-          <TextField hintText="Name" floatingLabelText="Name" style={{
-            "width": "100%"
-          }} floatingLabelFocusStyle={{
-            "color": "#EF5350"
-          }} underlineFocusStyle={{
-            "borderColor": "#EF5350"
-          }} onChange={e => this.onUpdateField('name', e)}/>
-          <TextField hintText="E-mail" floatingLabelText="E-mail" type="email" style={{
-            "width": "100%"
-          }} floatingLabelFocusStyle={{
-            "color": "#EF5350"
-          }} underlineFocusStyle={{
-            "borderColor": "#EF5350"
-          }} onChange={e => this.onUpdateField('email', e)}/>
-          <TextField hintText="Your message" floatingLabelText="Your message" style={{
-            "width": "100%"
-          }} multiLine={true} rows={2} floatingLabelFocusStyle={{
-            "color": "#EF5350"
-          }} underlineFocusStyle={{
-            "borderColor": "#EF5350"
-          }} onChange={e => this.onUpdateField('message', e)}/> {(this.state.errorMessage !== null && this.state.errorMessage !== "pending") && <p className="error-message message">{this.state.errorMessage}</p>
+
+          <TextField hintText="Name" floatingLabelText="Name"
+            style={{"width": "100%"}} floatingLabelFocusStyle={{"color": "#EF5350"}}
+            underlineFocusStyle={{"borderColor": "#EF5350"}}
+            onChange={e => this.onUpdateField('name', e)}
+          />
+
+          <TextField hintText="E-mail" floatingLabelText="E-mail" type="email"
+            style={{"width": "100%"}} floatingLabelFocusStyle={{"color": "#EF5350"}}
+            underlineFocusStyle={{"borderColor": "#EF5350"}}
+            onChange={e => this.onUpdateField('email', e)}
+          />
+
+          <TextField hintText="Your message" floatingLabelText="Your message"
+            style={{"width": "100%"}} multiLine={true} rows={2} 
+            floatingLabelFocusStyle={{"color": "#EF5350"}} 
+            underlineFocusStyle={{"borderColor": "#EF5350"}} 
+            onChange={e => this.onUpdateField('message', e)}
+          />
+
+          <TextField hintText="E-mail" floatingLabelText="To" className="none"
+            onChange={e => this.onUpdateField('none', e)}
+          />
+
+          {
+            (this.state.errorMessage !== null && this.state.errorMessage !== "pending") &&
+            <p className="error-message message">{this.state.errorMessage}</p>
           }
-          {this.state.successMessage != null && <p className="success-message message">{this.state.successMessage}</p>
+
+          {
+            this.state.successMessage != null &&
+            <p className="success-message message">{this.state.successMessage}</p>
           }
 
           {
@@ -125,7 +138,9 @@ class ContactComponent extends Component {
           }
 
           <div className="contact-btn">
-            <RaisedButton label="Coming Soon" onClick={this.onSubmit.bind(this)} backgroundColor="#EF5350" labelColor="#ffffff" disabled={true}/>
+            <RaisedButton label="Send Message" onClick={this.onSubmit.bind(this)}
+              backgroundColor="#EF5350" labelColor="#ffffff"
+            />
           </div>
       </div>
     );
