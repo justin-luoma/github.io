@@ -1,0 +1,25 @@
+.top {
+    z-index: 9999;
+}
+
+.grey {
+    z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: .5em;
+}
+
+.col {
+    margin-left: .5em;
+    margin-right: .5em;
+}

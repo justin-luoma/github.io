@@ -7,6 +7,12 @@ import {
 import Chip from 'material-ui/Chip';
 import './timeline.css';
 
+const style = {
+    card: {
+      backgroundColor: "#E8E8E8",
+    },
+};
+
 class TimelineComponent extends Component {
     constructor(props) {
         super(props);
@@ -30,12 +36,13 @@ class TimelineComponent extends Component {
     handleExpandChange = (expanded1) => {
       this.setState({expanded1: expanded1});
     };
+
     render() {
         return (
             <div className="timeline">
               <p className="headline">Working experience</p>
                 <div className="timeline-entry">
-                  <Card expanded={this.state.expandedMain} onExpandChange={this.handleExpandChangeMain}>
+                  <Card expanded={this.state.expandedMain} style={style.card} onExpandChange={this.handleExpandChangeMain}>
                       <CardHeader title="Senior Systems/Network Administrator" subtitle="United States Air Force"
                         actAsExpander={true} showExpandableButton={true}/>
                       <CardText expandable={true}>
@@ -71,7 +78,7 @@ class TimelineComponent extends Component {
                   </Card>
                 </div>
                   <div className="timeline-entry">
-                    <Card expanded={this.state.expanded1} onExpandChange={this.handleExpandChange}>
+                    <Card expanded={this.state.expanded1} style={style.card} onExpandChange={this.handleExpandChange}>
                         <CardHeader title="Systems/Network Administrator" subtitle="United States Air Force"
                           actAsExpander={true} showExpandableButton={true}/>
                         <CardText expandable={true}>

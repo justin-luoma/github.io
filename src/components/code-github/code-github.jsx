@@ -9,13 +9,19 @@ import FlatButton from 'material-ui/FlatButton';
 
 import './code-github.css';
 
+const style = {
+    card: {
+      backgroundColor: "#E8E8E8",
+    },
+};
+
 class CodeGithubComponent extends Component {
 
     render() {
         return (
             <div className="code-github">
               <p className="headline">View the code for this page.</p>
-                <Card>
+                <Card style={style.card}>
                   <CardHeader
                     subtitle="Github Repository"
                     title="justin-luoma/justin-luoma.github.io"
