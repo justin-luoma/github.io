@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
-import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import './Header.css';
+const scrollTo = require('scroll-to');
 
 const styles = theme => ({
     button: {
@@ -31,16 +32,23 @@ class HeaderComponent extends Component {
           height:window.innerHeight+'px',
           scrollTo: window.innerHeight
         });
-      }
-  
-      componentDidMount() {
+    }
+
+    componentDidMount() {
         window.addEventListener("resize", this.updateDimensions.bind(this));
         this.updateDimensions();
-      }
-  
-      componentWillUnmount() {
+    }
+
+    componentWillUnmount() {
         window.removeEventListener("resize", this.updateDimensions.bind(this));
-      }
+    }
+
+    scrollClick() {
+        scrollTo(0, this.state.scrollTo, {
+            ease: 'out-expo',
+            duration: 1000,
+        });
+    }
 
     render() {
         const { classes } = this.props;
@@ -53,7 +61,7 @@ class HeaderComponent extends Component {
                 </div>
                 <div className="scroll-down-btn">
                 <Button variant="fab" mini={true} className={classes.button}>
-                    <KeyboardArrowDown className={classes.icon} />
+                    <KeyboardArrowDown className={classes.icon} onClick={this.scrollClick.bind(this)} />
                 </Button>
                 </div>
             </div>
@@ -63,7 +71,6 @@ class HeaderComponent extends Component {
 
 HeaderComponent.propTypes = {
     classes: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles, { withTheme: true })(HeaderComponent);
+export default withStyles(styles)(HeaderComponent);
