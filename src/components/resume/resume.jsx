@@ -4,21 +4,10 @@ import Paper from 'material-ui/Paper';
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import './resume.css'
 
-const style = theme => ({
-    height: '100vh',
-    width: '95vw',
-    position: 'fixed',
-    top: 0,
-    left: '2.5vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-});
-
 const closeStyle = {
     position: 'fixed',
     top: '.5vh',
-    right: '4vh',
+    right: '.5vh',
 };
 const iframePaper = {
     height: '95vh',
@@ -28,7 +17,7 @@ const iframePaper = {
 const Resume = (props) => {
     return (
         <div className="grey">
-            <Paper className="top" style={style} zDepth={1} >
+            <Paper className="top" zDepth={1} >
                 <NavigationClose style={closeStyle} onClick={(e) => props.onClick(e)}></NavigationClose>
                 <div className="row">
                     <div className="col">
