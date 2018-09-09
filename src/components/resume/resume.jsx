@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import './resume.css'
 
-const style = {
+const style = theme => ({
     height: '100vh',
     width: '95vw',
     position: 'fixed',
@@ -13,7 +13,7 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
-};
+});
 
 const closeStyle = {
     position: 'fixed',
@@ -41,10 +41,12 @@ const Resume = (props) => {
                     </div>
                 </div>                
                 <Paper style={iframePaper} zDepth={5}>
-                <iframe 
-                    src="https://westerngovernorsuniversity-my.sharepoint.com/personal/jluoma_wgu_edu/_layouts/15/Doc.aspx?sourcedoc={e2437b90-1baf-4d77-b5c7-159c7e098520}&amp;action=embedview&amp;wdStartOn=1&amp;wdEmbedCode=0"
-                    width="99.6%" height="100%" frameBorder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> document, powered by
-                    <a target="_blank" href="https://office.com/webapps">Office Online</a>.</iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=C9D382F5B5AEF078&resid=C9D382F5B5AEF078%213925&authkey=AICHsJoKE8GUM4M&em=2"
+                        width="99.6%"
+                        height="100%"
+                        frameBorder="0"
+                        scrolling="no">
+                    </iframe>
                 </Paper>
             </Paper>
         </div>
@@ -62,7 +64,6 @@ class ResumeComponent extends Component {
 
     displayResume = (e) => {
         this.setState({showResume: !this.state.showResume});
-        console.log(e.target)
     }
 
     // let resume = null;
