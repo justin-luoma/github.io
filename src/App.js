@@ -13,7 +13,7 @@ const styles = {
 
 class App extends Component {
   render() {
-    const { classes } = this.props;
+    // const { classes } = this.props;
     return (
       <React.Fragment>
         <CssBaseline />
@@ -29,9 +29,7 @@ class App extends Component {
               </div>
             </div>
             <div className="section">
-              <div className="section-container">
                 <TimelineComponent />
-              </div>
             </div>
         </div>
       </React.Fragment>
