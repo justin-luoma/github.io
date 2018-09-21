@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Senior Systems/Network Administrator",
+        "company": "United States Air Force",
+        "dates": "December 2014 - Present.",
+        "info": [
+            "Re-engineered the network topology to segregate traffic types and fielded a development enclave to prevent system availability issues and the mixing of live and training data.",
+            "Developed network wide security log centralization and archiving solution, ensuring log integrity for 200 GB of logs a day.",
+            "Redesigned intranet, implementing DISA's Standard Technical Implementation Guides(STIGs) across entire network, including 10 network switches and 20+ servers/virtual machines, simplifying administration and enforcing security best practices.",
+            "Implemented a McAfee EPolicy Orchestrator infrastructure, including HIPS, Data Loss Prevention, Anti-Virus, and Policy Auditing to protect 25 servers and 150 endpoints from malware and data loss.",
+            "Identified the requirements and led the migration of; 22 Windows 2k8/2k3 servers to Windows Server 2k12 R2 including the successful migration of a Microsoft Exchange 2k3 mail server to Microsoft Exchange 2013.",
+            "Integrated 6 CentOS 7 servers into an all Windows network to provide end users project management, version control, code testing, and trouble ticketing capabilities in order to meet overall configuration management requirements.",
+            "Directed VMware 5.5 migration to VMware 6.5, coordinated side-by-side upgrade to limit downtime while downsizing hardware footprint.",
+            "Installed and configured CentOS 7 based KVM virtualization solution; implemented Linux network bonds/bridges with 802.3ad and Fiber Channel storage.",
+            "Led Exchange 2013 upgrade to Exchange 2016, implemented zero downtime live migration plan, migrated mailboxes for 150 users."
+        ]
+    },
+    {
+        "title": "Systems/Network Administrator",
+        "company": "United States Air Force",
+        "dates": "August 2011 - August 2014.",
+        "info": [
+            "Engineered VMware based solution, led migration of infrastructure from a physical environment to virtual, implementing high availability, and centralized storage.",
+            "Managed and configured Cisco switches, routers, and TACLANE IPSEC encryption devices across 31 sites including 6 WAN sites with 99.9% uptime SLA’s.",
+            "Administrator responsible for maintaining $2.7M Joint Worldwide Intelligence Communication Network node supporting 24/7/365 unmanned aerial vehicle operation, and Nellis AFB exercises.",
+            "Assisted in the creation Windows 7 baseline and deployment process to successfully transition 300 Windows XP clients with minimal customer impact.",
+            "Conducted patch management for 8 Windows servers while maintaining a > 99.9% monthly uptime.",
+            "Assisted in the maintenance and backup of ~82 Terabytes of combat mission data on a $170K EMC/Brocade Fiber Channel system."
+        ]
+    }
+]
