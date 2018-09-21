@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import HeaderComponent from './components/Header/Header';
 import IntroductionComponent from './components/Introduction/Introduction';
 import TimelineComponent from './components/Timeline/Timeline';
+import ProgrammingComponent from './components/Programming/Programming';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 
@@ -23,13 +24,16 @@ class App extends Component {
                 <HeaderComponent />
               </div>
             </div>
-            <div className="section colored">
+            <div className="section">
               <div className="section-container">
                 <IntroductionComponent />
               </div>
             </div>
             <div className="section">
-                <TimelineComponent />
+               <TimelineComponent />
+            </div>
+            <div className="section">
+              <ProgrammingComponent />
             </div>
         </div>
       </React.Fragment>

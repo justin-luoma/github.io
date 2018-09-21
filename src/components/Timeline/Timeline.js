@@ -13,9 +13,44 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+function ResumeCard(props) {
+    const classes = props.classes;
+    const data = props.data;
+    return (
+        <Card className={classes.card}>
+            <CardHeader
+                action={
+                    <IconButton className={classes.noHover}>
+                        <ExpandMoreIcon />
+                    </IconButton>
+                }
+                classes={{
+                    title: classes.cardTitle,
+                    action: classes.cardAction,
+                }}
+                className={classes.hoverCursor}
+                onClick={() => props.onClick()}
+                title={data.title}
+                subheader={data.company}
+            />
+            <Collapse in={props.expanded}>
+            <CardContent className={classes.cardContent}>
+                <Typography paragraph variant="body2" className={classes.textRange}>
+                    {data.dates}
+                </Typography>
+                    <ResumeList
+                        classes={classes}
+                        i={props.i}
+                        data={data.info}
+                    />
+            </CardContent>
+            </Collapse>
+        </Card>
+    );
+}
 
 function ResumeList(props) {
-    const data = props.data[props.i];
+    const data = props.data;
     return (
         <List className={props.classes.experienceList}>
             {data.map( (item, i) => (
@@ -36,6 +71,9 @@ const styles = theme => ({
         opacity: '.8',
         color: '#212121!important',
         fontFamily: "'Roboto' ,sans-serif",
+        marginBottom: '1em',
+    },
+    card: {
         marginBottom: '1em',
     },
     cardTitle: {
@@ -60,7 +98,7 @@ const styles = theme => ({
             cursor: 'pointer',
         },
     },
-    sectionConainer: {
+    sectionContainer: {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -78,6 +116,9 @@ const styles = theme => ({
         '& > li': {
             paddingBottom: 0,
         },
+        '& > li:last-child': {
+            paddingBottom: '12px',
+        }
     },
     progress: {
         color: '#16151C',
@@ -91,64 +132,64 @@ class TimelineComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            expanded0: false,
-            expanded1: false,
             resumeData: null,
         };
+    }
 
+    componentDidMount() {
         fetch("data/resume.json").then(
             response => response.json()
         ).then(
-            json => this.state.resumeData = json
+            json => this.setState(
+                {resumeData: json}
+            )
             // json => console.log(json)
         )
-    }    
+    }
 
     handleExpandClick(i) {
-        this.setState(state => (
-            { [`expanded${i}`]: !state[`expanded${i}`] }
-            ));
+        for (let j = 0; j < this.state.resumeData.length; j++) {
+            (i === j) ? (
+            this.setState(state => {
+                if (state[`expanded${i}`]) {
+                    return ({
+                        [`expanded${i}`]: !state[`expanded${i}`],
+                    });
+                }
+                return ({
+                    [`expanded${i}`]: !state[`expanded${i}`],
+                });
+            })
+            ) : (
+                this.setState(state => (
+                    { [`expanded${j}`]: false }
+                ))
+            )
+        }
+        
     }    
 
     render() {
         const { classes } = this.props;
-        console.log(this.state.resumeData)
         return (
-            <div className={classes.sectionConainer}>
+            <div className={classes.sectionContainer} style={this.state.maxWidth ? {width:'100%'}:{}}>
             <Typography variant="display1" className={classes.heading}>
                 Working experience
             </Typography>
-            <Card>
-                <CardHeader
-                    action={
-                        <IconButton className={classes.noHover}>
-                            <ExpandMoreIcon />
-                        </IconButton>
-                    }
-                    classes={{
-                        title: classes.cardTitle,
-                        action: classes.cardAction,
-                    }}
-                    className={classes.hoverCursor}
-                    onClick={() => this.handleExpandClick(0)}
-                    title="Senior Systems/Network Administrator"
-                    subheader="United States Air Force"
-                />
-                <Collapse in={this.state.expanded0}>
-                <CardContent className={classes.cardContent}>
-                    <Typography paragraph variant="body2" className={classes.textRange}>
-                        December 2014 - Present.
-                    </Typography>
-                    {this.state.resumeData === null ? <CircularProgress className={classes.progress} /> : (
-                        <ResumeList
+            {this.state.resumeData === null ? <CircularProgress className={classes.progress} /> : (
+                this.state.resumeData.map((item, i) => {
+                     return (
+                        <ResumeCard
+                            key={`card-${i}`}
                             classes={classes}
-                            i={0}
-                            data={this.state.resumeData}
+                            expanded={this.state[`expanded${i}`]}
+                            onClick={() => this.handleExpandClick(i)}
+                            i={i}
+                            data={item}
                         />
-                    )}
-                </CardContent>
-                </Collapse>
-            </Card>
+                     )
+                })
+            )}
             </div>
         );
     }

@@ -60,6 +60,11 @@ p {
   /* background: #DFF2D8; */
 }
 
+.section:nth-child(even) {
+  background: #E4A570;
+  /* background: #DFF2D8; */
+}
+
 p.headline {
   margin-top: 0;
   text-transform: uppercase;
