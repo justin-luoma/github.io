@@ -1,4 +1,6 @@
 default :
+	@echo "=============running yarn install=============="
+	yarn install
 	@echo "=============starting local server============="
 	yarn start
 
