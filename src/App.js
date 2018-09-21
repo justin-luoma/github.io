@@ -5,6 +5,7 @@ import HeaderComponent from './components/Header/Header';
 import IntroductionComponent from './components/Introduction/Introduction';
 import TimelineComponent from './components/Timeline/Timeline';
 import ProgrammingComponent from './components/Programming/Programming';
+import CodeComponent from './components/Code/Code';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 
@@ -40,6 +41,9 @@ class App extends Component {
             <div className="section">
               <ProgrammingComponent />
 >>>>>>> Finished timeline and programming components
+            </div>
+            <div className="section">
+              <CodeComponent />
             </div>
         </div>
       </React.Fragment>
