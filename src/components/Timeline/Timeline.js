@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
-<<<<<<< HEAD
-=======
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -63,7 +61,6 @@ function ResumeList(props) {
         </List>
     )
 }
->>>>>>> Finished timeline and programming components
 
 const styles = theme => ({
     heading: {
@@ -74,8 +71,6 @@ const styles = theme => ({
         opacity: '.8',
         color: '#212121!important',
         fontFamily: "'Roboto' ,sans-serif",
-<<<<<<< HEAD
-=======
         marginBottom: '1em',
     },
     card: {
@@ -130,19 +125,10 @@ const styles = theme => ({
         width: '50px',
         height: '50px',
         marginLeft: 'calc(50% - 25px)'
->>>>>>> Finished timeline and programming components
     }
 });
 
 class TimelineComponent extends Component {
-<<<<<<< HEAD
-    render() {
-        const { classes } = this.props;
-        return (
-            <Typography variant="display1" className={classes.heading}>
-                Working experience
-            </Typography>
-=======
     constructor(props) {
         super(props);
         this.state = {
@@ -205,7 +191,6 @@ class TimelineComponent extends Component {
                 })
             )}
             </div>
->>>>>>> Finished timeline and programming components
         );
     }
 }
