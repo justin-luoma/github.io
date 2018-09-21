@@ -3,10 +3,32 @@ import PropTypes from 'prop-types';
 import { withStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
-import './Header.css';
 const scrollTo = require('scroll-to');
 
 const styles = theme => ({
+    header: {
+        textAlign: 'center',
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        width: '100%',
+        color: '#bdc8cc',
+    },
+    h3: {
+        textTransform: 'uppercase',
+        letterSpacing: '9px', 
+    },
+    h6: {
+        fontWeight: '300',
+        textTransform: 'uppercase',
+        letterSpacing: '2px',
+    },
+    scrollDown: {
+        position: 'absolute',
+        bottom: '20px',
+        textAlign: 'center',
+        width: '100%',
+    },
     button: {
         margin: theme.spacing.unit,
         backgroundColor: '#bdc8cc',
@@ -54,14 +76,14 @@ class HeaderComponent extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.wrapper}>
-                <div className="header">
-                    <h3>Justin Luoma</h3>
-                    <h6>Senior Systems Administrator</h6>
-                    <h6>Future Software Developer</h6>
+                <div className={classes.header}>
+                    <h3 className={classes.h3}>Justin Luoma</h3>
+                    <h6 className={classes.h6}>Senior Systems Administrator</h6>
+                    <h6 className={classes.h6}>Future Software Developer</h6>
                 </div>
-                <div className="scroll-down-btn">
+                <div className={classes.scrollDown}>
                 <Button variant="fab" mini={true} className={classes.button}>
-                    <KeyboardArrowDown className={classes.icon} onClick={this.scrollClick.bind(this)} />
+                    <KeyboardArrowDown color="#16151B" className={classes.icon} onClick={this.scrollClick.bind(this)} />
                 </Button>
                 </div>
             </div>
