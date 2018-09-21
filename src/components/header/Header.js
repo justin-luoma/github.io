@@ -83,7 +83,7 @@ class HeaderComponent extends Component {
                 </div>
                 <div className={classes.scrollDown}>
                 <Button variant="fab" mini={true} className={classes.button}>
-                    <KeyboardArrowDown color="#16151B" className={classes.icon} onClick={this.scrollClick.bind(this)} />
+                    <KeyboardArrowDown className={classes.icon} onClick={this.scrollClick.bind(this)} />
                 </Button>
                 </div>
             </div>
