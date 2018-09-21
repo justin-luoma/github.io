@@ -185,4 +185,4 @@ ProgrammingComponent.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(ProgrammingComponent);
+export default withStyles(styles)(ProgrammingComponent);
