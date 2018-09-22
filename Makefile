@@ -8,10 +8,12 @@ backup : FORCE
 	@echo "=============backing up .git directory============="
 	rm -rf ./bk/.git
 	cp -RLp ./build/.git ./bk/
+	cp -Lp ./build/License ./bk/
 
 restore :
 	@echo "=============restoring .git directory============="
 	cp -RLp ./bk/.git ./build/
+	cp -Lp ./bk/License ./build/
 
 build : backup FORCE
 	@echo "=============building site============="
