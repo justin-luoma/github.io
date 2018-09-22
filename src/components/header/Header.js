@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
-const scrollTo = require('scroll-to');
+// const scrollTo = require('scroll-to');
 
 const styles = theme => ({
     header: {
@@ -34,7 +34,7 @@ const styles = theme => ({
         backgroundColor: '#bdc8cc',
     },
     wrapper: {
-        height: '100vh',
+        height: `${window.innerHeight}px`,
         position: 'relative',
     },
     icon: {
@@ -44,15 +44,18 @@ const styles = theme => ({
 });
 
 class HeaderComponent extends Component {
-    state = {
-        height: this.props.height,
-        scrollTo: this.props.height
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            height: this.props.height,
+            scrollTo: this.props.height
+        };
+    }
 
     updateDimensions() {
         this.setState({
-          height:window.innerHeight+'px',
-          scrollTo: window.innerHeight
+          height: `${window.innerHeight}px`,
+          scrollTo: window.innerHeight,
         });
     }
 
@@ -66,10 +69,11 @@ class HeaderComponent extends Component {
     }
 
     scrollClick() {
-        scrollTo(0, this.state.scrollTo, {
-            ease: 'out-expo',
-            duration: 1000,
-        });
+        // scrollTo(0, this.state.scrollTo, {
+        //     ease: 'out-expo',
+        //     duration: 1000,
+        // });
+        window.scrollTo({left: 0, top:this.state.scrollTo, behavior:'smooth'});
     }
 
     render() {
