@@ -112,6 +112,15 @@ class ProgrammingComponent extends Component {
                                 <ul>
                                     <li>
                                         &lt;<span className={classes.htmlTags}>head</span>&gt;
+                                    </li>
+                                    <ul className={classes.noPaddingTop}>
+                                        <li>
+                                            &lt;<span className={classes.htmlTags}>title</span>&gt;
+                                            <span className={classes.htmlText}>Justin Luoma</span>
+                                            &lt;/<span className={classes.htmlTags}>title</span>&gt;
+                                        </li>
+                                    </ul>
+                                    <li>
                                         &lt;/<span className={classes.htmlTags}>head</span>&gt;
                                     </li>
                                 <li>&lt;<span className={classes.htmlTags}>body</span>&gt;</li>
@@ -119,6 +128,16 @@ class ProgrammingComponent extends Component {
                                     <ul>
                                         <li>&lt;<span className={classes.htmlTags}>ul</span>&gt;</li>
                                         <ul className={classes.noPaddingTop}>
+                                            <li>
+                                                &lt;<span className={classes.htmlTags}>li</span>&gt;
+                                                <span className={classes.htmlText}>Java</span>
+                                                &lt;/<span className={classes.htmlTags}>li</span>&gt;
+                                            </li>
+                                            <li>
+                                                &lt;<span className={classes.htmlTags}>li</span>&gt;
+                                                <span className={classes.htmlText}>Spring</span>
+                                                &lt;/<span className={classes.htmlTags}>li</span>&gt;
+                                            </li>
                                             <li>
                                                 &lt;<span className={classes.htmlTags}>li</span>&gt;
                                                 <span className={classes.htmlText}>JavaScript</span>
@@ -132,11 +151,6 @@ class ProgrammingComponent extends Component {
                                             <li>
                                                 &lt;<span className={classes.htmlTags}>li</span>&gt;
                                                 <span className={classes.htmlText}>Go</span>
-                                                &lt;/<span className={classes.htmlTags}>li</span>&gt;
-                                            </li>
-                                            <li>
-                                                &lt;<span className={classes.htmlTags}>li</span>&gt;
-                                                <span className={classes.htmlText}>Java</span>
                                                 &lt;/<span className={classes.htmlTags}>li</span>&gt;
                                             </li>
                                             <li>
@@ -161,7 +175,12 @@ class ProgrammingComponent extends Component {
                                             </li>
                                             <li>
                                                 &lt;<span className={classes.htmlTags}>li</span>&gt;
-                                                <span className={classes.htmlText}>HTML5, CSS3</span>
+                                                <span className={classes.htmlText}>HTML5</span>
+                                                &lt;/<span className={classes.htmlTags}>li</span>&gt;
+                                            </li>
+                                            <li>
+                                                &lt;<span className={classes.htmlTags}>li</span>&gt;
+                                                <span className={classes.htmlText}>CSS3</span>
                                                 &lt;/<span className={classes.htmlTags}>li</span>&gt;
                                             </li>
                                         </ul>

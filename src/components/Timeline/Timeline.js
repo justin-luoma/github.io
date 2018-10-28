@@ -75,6 +75,7 @@ const styles = theme => ({
     },
     card: {
         marginBottom: '1em',
+        backgroundColor: '#E4A570',
     },
     cardTitle: {
         fontSize: '1em',

@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button';
 import isEmail from 'validator/lib/isEmail';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
+const grey = '#E8E8E8';
+const orange = '#E4A570';
 
 const styles = {
     sectionContainer: {
@@ -44,13 +46,14 @@ const styles = {
     focused: {},
     cssLabel: {
         '&$cssFocused': {
-        //   color: '#EF5350',
-            color: '#E8E8E8',
+          color: '#E4A570',
+            // color: '#E8E8E8',
         },
       },
      cssFocused: {},
      button: {
-         backgroundColor: '#E8E8E8',
+         backgroundColor: '#E4A570',
+        //  backgroundColor: '#E8E8E8',
      },
      to: {
          display: 'none!important',

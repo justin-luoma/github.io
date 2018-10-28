@@ -21,5 +21,10 @@
   },
   "devDependencies": {
     "eslint": "^5.5.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
   }
 }

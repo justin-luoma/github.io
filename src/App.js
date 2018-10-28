@@ -5,6 +5,7 @@ import HeaderComponent from './components/Header/Header';
 import IntroductionComponent from './components/Introduction/Introduction';
 import TimelineComponent from './components/Timeline/Timeline';
 import ProgrammingComponent from './components/Programming/Programming';
+import ProjectsComponent from './components/Projects/Projects';
 import CodeComponent from './components/Code/Code';
 import ContactComponent from './components/Contact/Contact';
 import FooterComponent from './components/Footer/Footer';
@@ -50,6 +51,9 @@ class App extends Component {
               <ProgrammingComponent />
             </div>
             <div className={classes.section}>
+              <ProjectsComponent />
+            </div>
+            <div className={classes.section}>
               <CodeComponent />
             </div>
             <div className={classes.section}>
@@ -66,6 +70,6 @@ class App extends Component {
 
 App.propTypes = {
   classes: PropTypes.object.isRequired,
-}
+};
 
 export default withStyles(styles)(App);

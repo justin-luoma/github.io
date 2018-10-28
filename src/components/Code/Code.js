@@ -34,8 +34,8 @@ const styles = {
         marginBottom: '1em',
     },
     card: {
-        // backgroundColor: '#E8E8E8',
-        backgroundColor: '#E4A570',
+        backgroundColor: '#E8E8E8',
+        // backgroundColor: '#E4A570',
     },
     cardContent: {
         paddingLeft: '1em',
