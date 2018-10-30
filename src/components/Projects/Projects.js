@@ -73,7 +73,7 @@ class ProjectsComponent extends Component {
                             <CardContent>
                                 <Typography variant="headline" component="h2">Codeup Student Dashboard</Typography>
                                 <Typography component="p">
-                                    Full-stack Java web application using Spring and Thymeleaf, developed for internal use my Codeup to track students through the application process.
+                                    Full-stack Java web application using Spring and Thymeleaf, developed for internal use by Codeup to track students through the application process.
                                 </Typography>
                                 {/*<Paper elevation={0} className={classes.svgPaper}>*/}
 
